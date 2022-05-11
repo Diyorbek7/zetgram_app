@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:zetgram_app/src/model/onboarding/onboarding_model.dart';
+import 'package:zetgram_app/src/ui/auth/login_screen.dart';
 import 'package:zetgram_app/src/utils/app_color/app_color.dart';
 import 'package:zetgram_app/src/utils/utils.dart';
 
@@ -150,28 +152,46 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ],
           ),
-          Container(
-            height: 57 * h,
-            width: width,
-            margin: EdgeInsets.only(
-              top: 33 * h,
-              left: 25 * w,
-              right: 25 * w,
-              bottom: 60 * h,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(28.5),
-              color: AppColor.blue,
-            ),
-            child: Center(
-              child: Text(
-                "Next",
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 18 * h,
-                  fontFamily: AppColor.fontNunitoSans,
-                  height: 25 / 18 * h,
-                  color: AppColor.white,
+          GestureDetector(
+            onTap: () {
+              if (_currentIndex != 2) {
+                _controller.nextPage(
+                  duration: const Duration(milliseconds: 370),
+                  curve: Curves.easeInOut,
+                );
+              } else {
+                Navigator.pushReplacement(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: const LoginScreen(),
+                  ),
+                );
+              }
+            },
+            child: Container(
+              height: 57 * h,
+              width: width,
+              margin: EdgeInsets.only(
+                top: 33 * h,
+                left: 25 * w,
+                right: 25 * w,
+                bottom: 60 * h,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(28.5),
+                color: AppColor.blue,
+              ),
+              child: Center(
+                child: Text(
+                  _currentIndex == 2 ? "Get Started" : "Next",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18 * h,
+                    fontFamily: AppColor.fontNunitoSans,
+                    height: 25 / 18 * h,
+                    color: AppColor.white,
+                  ),
                 ),
               ),
             ),
