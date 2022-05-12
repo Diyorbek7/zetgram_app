@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:zetgram_app/src/ui/auth/register_screen.dart';
 import 'package:zetgram_app/src/utils/app_color/app_color.dart';
 import 'package:zetgram_app/src/utils/utils.dart';
 
@@ -84,37 +86,42 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(
-                  left: 22 * w,
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12 * w,
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20 * h,
-                        fontFamily: AppColor.fontNunitoSans,
-                        height: 27 / 20 * h,
-                        color: AppColor.grey,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: RegisterScreen()));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 22 * w,
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12 * w,
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20 * h,
+                          fontFamily: AppColor.fontNunitoSans,
+                          height: 27 / 20 * h,
+                          color: AppColor.grey,
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: 6 * h,
-                      width: 6 * h,
-                      margin: EdgeInsets.only(
-                        top: 4 * h,
+                      Container(
+                        height: 6 * h,
+                        width: 6 * h,
+                        margin: EdgeInsets.only(
+                          top: 4 * h,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                          color: Colors.transparent,
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(3),
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -221,7 +228,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Expanded(
                         child: TextField(
-                          obscureText: isHiddenPassword,
+                          obscureText: !isHiddenPassword,
                           controller: _controllerPassword,
                           decoration: InputDecoration(
                             border: InputBorder.none,
