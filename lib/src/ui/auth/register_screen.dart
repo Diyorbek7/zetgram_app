@@ -52,21 +52,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
           Row(
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                  left: 16 * w,
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12 * w,
-                ),
-                child: Text(
-                  "Log In",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20 * h,
-                    fontFamily: AppColor.fontNunitoSans,
-                    height: 33 / 20 * h,
-                    color: AppColor.dark,
+              GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 16 * w,
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12 * w,
+                  ),
+                  child: Text(
+                    "Log In",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20 * h,
+                      fontFamily: AppColor.fontNunitoSans,
+                      height: 33 / 20 * h,
+                      color: AppColor.dark,
+                    ),
                   ),
                 ),
               ),

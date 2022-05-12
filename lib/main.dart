@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zetgram_app/src/ui/auth/login_screen.dart';
-import 'package:zetgram_app/src/ui/auth/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.iOS,
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterScreen(),
+      home: const LoginScreen(),
     );
   }
 }
