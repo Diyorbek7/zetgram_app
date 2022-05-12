@@ -87,8 +87,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               GestureDetector(
-                onTap: (){
-                  Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: const RegisterScreen()));
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      child: const RegisterScreen(),
+                    ),
+                  );
                 },
                 child: Container(
                   margin: EdgeInsets.only(
@@ -259,15 +265,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             left: 6 * w,
                           ),
                           child: Center(
-                            child: isHiddenPassword ? SvgPicture.asset(
-                              "assets/icons/eye-off.svg",
-                              height: 24 * h,
-                              width: 24 * h,
-                            ) : SvgPicture.asset(
-                              "assets/icons/eye.svg",
-                              height: 24 * h,
-                              width: 24 * h,
-                            ),
+                            child: isHiddenPassword
+                                ? SvgPicture.asset(
+                                    "assets/icons/eye-off.svg",
+                                    height: 24 * h,
+                                    width: 24 * h,
+                                  )
+                                : SvgPicture.asset(
+                                    "assets/icons/eye.svg",
+                                    height: 24 * h,
+                                    width: 24 * h,
+                                  ),
                           ),
                         ),
                       ),
@@ -339,7 +347,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Expanded(
                         child: Container(
-                          margin: EdgeInsets.only(left: 20*w,),
+                          margin: EdgeInsets.only(
+                            left: 20 * w,
+                          ),
                           child: Text(
                             "Or login with",
                             style: TextStyle(
@@ -413,6 +423,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   void _togglePassword() {
     setState(() {
       isHiddenPassword = !isHiddenPassword;
