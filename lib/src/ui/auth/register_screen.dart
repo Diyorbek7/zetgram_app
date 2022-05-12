@@ -117,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               children: [
                 SizedBox(
-                  height: 45 * h,
+                  height: 47 * h,
                 ),
                 Text(
                   "Username",

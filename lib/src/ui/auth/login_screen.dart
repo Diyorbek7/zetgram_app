@@ -162,16 +162,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(27.5),
                     color: AppColor.white,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: const Offset(
-                          0,
-                          10,
-                        ),
-                        blurRadius: 75,
-                        color: const Color(0xFF939393).withOpacity(0.1),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     controller: _controllerEmail,
@@ -219,16 +209,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(27.5),
                     color: AppColor.white,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: const Offset(
-                          0,
-                          10,
-                        ),
-                        blurRadius: 75,
-                        color: const Color(0xFF939393).withOpacity(0.1),
-                      ),
-                    ],
                   ),
                   child: Row(
                     children: [
