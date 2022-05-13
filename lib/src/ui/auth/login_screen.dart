@@ -21,7 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   PageController controller = PageController();
 
-  bool isHiddenPassword = true;
+  bool isHiddenPasswordRegister = true;
+  bool isHiddenPasswordLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -223,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           Expanded(
                             child: TextField(
-                              obscureText: !isHiddenPassword,
+                              obscureText: !isHiddenPasswordLogin,
                               controller: _controllerPasswordLogin,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -254,7 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 left: 6 * w,
                               ),
                               child: Center(
-                                child: isHiddenPassword
+                                child: isHiddenPasswordLogin
                                     ? SvgPicture.asset(
                                         "assets/icons/eye-off.svg",
                                         height: 24 * h,
@@ -536,7 +537,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           Expanded(
                             child: TextField(
-                              obscureText: !isHiddenPassword,
+                              obscureText: !isHiddenPasswordRegister,
                               controller: _controllerPasswordRegister,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -559,7 +560,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: _togglePassword,
+                            onTap: _togglePasswordRegister,
                             child: Container(
                               height: 28 * h,
                               width: 28 * h,
@@ -567,7 +568,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 left: 6 * w,
                               ),
                               child: Center(
-                                child: isHiddenPassword
+                                child: isHiddenPasswordRegister
                                     ? SvgPicture.asset(
                                   "assets/icons/eye-off.svg",
                                   height: 24 * h,
@@ -599,7 +600,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _togglePassword() {
     setState(() {
-      isHiddenPassword = !isHiddenPassword;
+      isHiddenPasswordLogin = !isHiddenPasswordLogin;
+    });
+  }
+  void _togglePasswordRegister() {
+    setState(() {
+      isHiddenPasswordRegister = !isHiddenPasswordRegister;
     });
   }
 }
