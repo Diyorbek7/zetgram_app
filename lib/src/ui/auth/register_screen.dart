@@ -111,186 +111,188 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ],
           ),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.symmetric(
-                horizontal: 25 * w,
-              ),
-              children: [
-                SizedBox(
-                  height: 47 * h,
+            child: Container(
+              child: ListView(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 25 * w,
                 ),
-                Text(
-                  "Username",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16 * h,
-                    fontFamily: AppColor.fontNunitoSans,
-                    height: 27 / 16 * h,
-                    color: AppColor.mediumDark,
+                children: [
+                  SizedBox(
+                    height: 47 * h,
                   ),
-                ),
-                Container(
-                  width: width,
-                  margin: EdgeInsets.only(
-                    top: 15 * h,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20 * w,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(27.5),
-                    color: AppColor.white,
-                  ),
-                  child: TextField(
-                    controller: _controllerUsername,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Create your username",
-                      hintStyle: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14 * h,
-                        fontFamily: AppColor.fontNunitoSans,
-                        height: 25 / 14 * h,
-                        color: AppColor.grey.withOpacity(0.8),
-                      ),
-                    ),
+                  Text(
+                    "Username",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 16 * h,
                       fontFamily: AppColor.fontNunitoSans,
-                      height: 25 / 16 * h,
-                      color: AppColor.dark,
+                      height: 27 / 16 * h,
+                      color: AppColor.mediumDark,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 35 * h,
-                ),
-                Text(
-                  "Email",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16 * h,
-                    fontFamily: AppColor.fontNunitoSans,
-                    height: 27 / 16 * h,
-                    color: AppColor.mediumDark,
-                  ),
-                ),
-                Container(
-                  width: width,
-                  margin: EdgeInsets.only(
-                    top: 15 * h,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20 * w,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(27.5),
-                    color: AppColor.white,
-                  ),
-                  child: TextField(
-                    controller: _controllerEmail,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Enter your email",
-                      hintStyle: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14 * h,
+                  Container(
+                    width: width,
+                    margin: EdgeInsets.only(
+                      top: 15 * h,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20 * w,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(27.5),
+                      color: AppColor.white,
+                    ),
+                    child: TextField(
+                      controller: _controllerUsername,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Create your username",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14 * h,
+                          fontFamily: AppColor.fontNunitoSans,
+                          height: 25 / 14 * h,
+                          color: AppColor.grey.withOpacity(0.8),
+                        ),
+                      ),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16 * h,
                         fontFamily: AppColor.fontNunitoSans,
-                        height: 25 / 14 * h,
-                        color: AppColor.grey.withOpacity(0.8),
+                        height: 25 / 16 * h,
+                        color: AppColor.dark,
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 35 * h,
+                  ),
+                  Text(
+                    "Email",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 16 * h,
                       fontFamily: AppColor.fontNunitoSans,
-                      height: 25 / 16 * h,
-                      color: AppColor.dark,
+                      height: 27 / 16 * h,
+                      color: AppColor.mediumDark,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 35 * h,
-                ),
-                Text(
-                  "Password",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16 * h,
-                    fontFamily: AppColor.fontNunitoSans,
-                    height: 27 / 16 * h,
-                    color: AppColor.mediumDark,
+                  Container(
+                    width: width,
+                    margin: EdgeInsets.only(
+                      top: 15 * h,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20 * w,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(27.5),
+                      color: AppColor.white,
+                    ),
+                    child: TextField(
+                      controller: _controllerEmail,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Enter your email",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14 * h,
+                          fontFamily: AppColor.fontNunitoSans,
+                          height: 25 / 14 * h,
+                          color: AppColor.grey.withOpacity(0.8),
+                        ),
+                      ),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16 * h,
+                        fontFamily: AppColor.fontNunitoSans,
+                        height: 25 / 16 * h,
+                        color: AppColor.dark,
+                      ),
+                    ),
                   ),
-                ),
-                Container(
-                  width: width,
-                  margin: EdgeInsets.only(
-                    top: 15 * h,
+                  SizedBox(
+                    height: 35 * h,
                   ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20 * w,
+                  Text(
+                    "Password",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16 * h,
+                      fontFamily: AppColor.fontNunitoSans,
+                      height: 27 / 16 * h,
+                      color: AppColor.mediumDark,
+                    ),
                   ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(27.5),
-                    color: AppColor.white,
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          obscureText: !isHiddenPassword,
-                          controller: _controllerPassword,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Create your password",
-                            hintStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14 * h,
+                  Container(
+                    width: width,
+                    margin: EdgeInsets.only(
+                      top: 15 * h,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20 * w,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(27.5),
+                      color: AppColor.white,
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            obscureText: !isHiddenPassword,
+                            controller: _controllerPassword,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Create your password",
+                              hintStyle: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14 * h,
+                                fontFamily: AppColor.fontNunitoSans,
+                                height: 25 / 14 * h,
+                                color: AppColor.grey.withOpacity(0.8),
+                              ),
+                            ),
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16 * h,
                               fontFamily: AppColor.fontNunitoSans,
-                              height: 25 / 14 * h,
-                              color: AppColor.grey.withOpacity(0.8),
+                              height: 25 / 16 * h,
+                              color: AppColor.dark,
                             ),
                           ),
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16 * h,
-                            fontFamily: AppColor.fontNunitoSans,
-                            height: 25 / 16 * h,
-                            color: AppColor.dark,
+                        ),
+                        GestureDetector(
+                          onTap: _togglePassword,
+                          child: Container(
+                            height: 28 * h,
+                            width: 28 * h,
+                            margin: EdgeInsets.only(
+                              left: 6 * w,
+                            ),
+                            child: Center(
+                              child: isHiddenPassword
+                                  ? SvgPicture.asset(
+                                      "assets/icons/eye-off.svg",
+                                      height: 24 * h,
+                                      width: 24 * h,
+                                    )
+                                  : SvgPicture.asset(
+                                      "assets/icons/eye.svg",
+                                      height: 24 * h,
+                                      width: 24 * h,
+                                    ),
+                            ),
                           ),
                         ),
-                      ),
-                      GestureDetector(
-                        onTap: _togglePassword,
-                        child: Container(
-                          height: 28 * h,
-                          width: 28 * h,
-                          margin: EdgeInsets.only(
-                            left: 6 * w,
-                          ),
-                          child: Center(
-                            child: isHiddenPassword
-                                ? SvgPicture.asset(
-                                    "assets/icons/eye-off.svg",
-                                    height: 24 * h,
-                                    width: 24 * h,
-                                  )
-                                : SvgPicture.asset(
-                                    "assets/icons/eye.svg",
-                                    height: 24 * h,
-                                    width: 24 * h,
-                                  ),
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 25 * h,
-                ),
-              ],
+                  SizedBox(
+                    height: 25 * h,
+                  ),
+                ],
+              ),
             ),
           ),
           Container(
