@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zetgram_app/src/ui/auth/verification/code_verification_screen.dart';
+import 'package:zetgram_app/src/ui/menyu/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.iOS,
         primarySwatch: Colors.blue,
       ),
-      home: const CodeVerificationScreen(),
+      home: const HomeScreen(),
     );
   }
 }
