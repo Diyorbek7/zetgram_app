@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zetgram_app/src/ui/auth/auth_screen.dart';
-import 'package:zetgram_app/src/ui/auth/verification/verification_screen.dart';
+import 'package:zetgram_app/src/ui/auth/verification/forgot_password_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.iOS,
         primarySwatch: Colors.blue,
       ),
-      home: const VerificationScreen(),
+      home: const ForgotPasswordScreen(),
     );
   }
 }
