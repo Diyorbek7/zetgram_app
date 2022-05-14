@@ -96,7 +96,9 @@ class _CodeVerificationScreenState extends State<CodeVerificationScreen> {
                   height: 52 * h,
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 41*w,),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 41 * w,
+                  ),
                   child: Pinput(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     controller: _controllerCode,
@@ -107,14 +109,14 @@ class _CodeVerificationScreenState extends State<CodeVerificationScreen> {
                         borderRadius: BorderRadius.circular(10),
                         color: AppColor.white,
                         border: Border.all(
-                          color: AppColor.grey,
+                          color: AppColor.grey.withOpacity(0.6),
                         ),
                       ),
                       textStyle: TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: 24*h,
+                        fontSize: 24 * h,
                         fontFamily: AppColor.fontNunitoSans,
-                        height: 33/24*h,
+                        height: 33 / 24 * h,
                         color: AppColor.dark,
                       ),
                     ),
