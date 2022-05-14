@@ -164,7 +164,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   context,
                   PageTransition(
                     type: PageTransitionType.fade,
-                    child: const LoginScreen(),
+                    child: const AuthScreen(),
                   ),
                 );
               }

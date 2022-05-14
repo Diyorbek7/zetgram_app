@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:zetgram_app/src/ui/auth/register_screen.dart';
 import 'package:zetgram_app/src/utils/app_color/app_color.dart';
 import 'package:zetgram_app/src/utils/utils.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class AuthScreen extends StatefulWidget {
+  const AuthScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _AuthScreenState createState() => _AuthScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController _controllerEmailLogin = TextEditingController();
-  final TextEditingController _controllerEmailRegister = TextEditingController();
-  final TextEditingController _controllerPasswordLogin = TextEditingController();
-  final TextEditingController _controllerPasswordRegister = TextEditingController();
+  final TextEditingController _controllerEmailRegister =
+      TextEditingController();
+  final TextEditingController _controllerPasswordLogin =
+      TextEditingController();
+  final TextEditingController _controllerPasswordRegister =
+      TextEditingController();
   final TextEditingController _controllerUsername = TextEditingController();
 
   PageController controller = PageController();
 
   bool isHiddenPasswordRegister = true;
   bool isHiddenPasswordLogin = true;
+
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -59,48 +62,67 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Row(
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                  left: 16 * w,
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12 * w,
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      "Log In",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20 * h,
-                        fontFamily: AppColor.fontNunitoSans,
-                        height: 33 / 20 * h,
-                        color: AppColor.dark,
+              GestureDetector(
+                onTap: () {
+                  if (_currentIndex != 0) {
+                    controller.previousPage(
+                      duration: const Duration(milliseconds: 370),
+                      curve: Curves.easeInOut,
+                    );
+                  }
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 16 * w,
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12 * w,
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Log In",
+                        style: _currentIndex != 1
+                            ? TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20 * h,
+                                fontFamily: AppColor.fontNunitoSans,
+                                height: 33 / 20 * h,
+                                color: AppColor.dark,
+                              )
+                            : TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20 * h,
+                                fontFamily: AppColor.fontNunitoSans,
+                                height: 27 / 20 * h,
+                                color: AppColor.grey,
+                              ),
                       ),
-                    ),
-                    Container(
-                      height: 6 * h,
-                      width: 6 * h,
-                      margin: EdgeInsets.only(
-                        top: 4 * h,
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(3),
-                        color: AppColor.blue,
-                      ),
-                    ),
-                  ],
+                      _currentIndex != 1
+                          ? Container(
+                              height: 6 * h,
+                              width: 6 * h,
+                              margin: EdgeInsets.only(
+                                top: 4 * h,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(3),
+                                color: AppColor.blue,
+                              ),
+                            )
+                          : Container(),
+                    ],
+                  ),
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.fade,
-                      child: const RegisterScreen(),
-                    ),
-                  );
+                  if (_currentIndex != 1) {
+                    controller.nextPage(
+                      duration: const Duration(milliseconds: 370),
+                      curve: Curves.easeInOut,
+                    );
+                  }
                 },
                 child: Container(
                   margin: EdgeInsets.only(
@@ -113,25 +135,35 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Text(
                         "Sign Up",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20 * h,
-                          fontFamily: AppColor.fontNunitoSans,
-                          height: 27 / 20 * h,
-                          color: AppColor.grey,
-                        ),
+                        style: _currentIndex != 0
+                            ? TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20 * h,
+                                fontFamily: AppColor.fontNunitoSans,
+                                height: 33 / 20 * h,
+                                color: AppColor.dark,
+                              )
+                            : TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20 * h,
+                                fontFamily: AppColor.fontNunitoSans,
+                                height: 27 / 20 * h,
+                                color: AppColor.grey,
+                              ),
                       ),
-                      Container(
-                        height: 6 * h,
-                        width: 6 * h,
-                        margin: EdgeInsets.only(
-                          top: 4 * h,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3),
-                          color: Colors.transparent,
-                        ),
-                      ),
+                      _currentIndex != 0
+                          ? Container(
+                              height: 6 * h,
+                              width: 6 * h,
+                              margin: EdgeInsets.only(
+                                top: 4 * h,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(3),
+                                color: AppColor.blue,
+                              ),
+                            )
+                          : Container(),
                     ],
                   ),
                 ),
@@ -141,6 +173,11 @@ class _LoginScreenState extends State<LoginScreen> {
           Expanded(
             child: PageView(
               controller: controller,
+              onPageChanged: (_index) {
+                setState(() {
+                  _currentIndex = _index;
+                });
+              },
               scrollDirection: Axis.horizontal,
               children: [
                 ListView(
@@ -415,7 +452,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   children: [
                     SizedBox(
-                      height: 47 * h,
+                      height: 41 * h,
                     ),
                     Text(
                       "Username",
@@ -570,23 +607,52 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Center(
                                 child: isHiddenPasswordRegister
                                     ? SvgPicture.asset(
-                                  "assets/icons/eye-off.svg",
-                                  height: 24 * h,
-                                  width: 24 * h,
-                                )
+                                        "assets/icons/eye-off.svg",
+                                        height: 24 * h,
+                                        width: 24 * h,
+                                      )
                                     : SvgPicture.asset(
-                                  "assets/icons/eye.svg",
-                                  height: 24 * h,
-                                  width: 24 * h,
-                                ),
+                                        "assets/icons/eye.svg",
+                                        height: 24 * h,
+                                        width: 24 * h,
+                                      ),
                               ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 25 * h,
+                    Container(
+                      height: 57 * h,
+                      margin: EdgeInsets.only(
+                        top: 50 * h,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(28.5),
+                        color: AppColor.blue,
+                        boxShadow: [
+                          BoxShadow(
+                            offset: const Offset(
+                              0,
+                              6,
+                            ),
+                            blurRadius: 75,
+                            color: const Color(0xFF645757).withOpacity(0.05),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18 * h,
+                            fontFamily: AppColor.fontNunitoSans,
+                            height: 25 / 18 * h,
+                            color: AppColor.white,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -603,6 +669,7 @@ class _LoginScreenState extends State<LoginScreen> {
       isHiddenPasswordLogin = !isHiddenPasswordLogin;
     });
   }
+
   void _togglePasswordRegister() {
     setState(() {
       isHiddenPasswordRegister = !isHiddenPasswordRegister;
