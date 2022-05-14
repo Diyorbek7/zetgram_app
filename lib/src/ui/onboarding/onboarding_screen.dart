@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:zetgram_app/src/model/onboarding/onboarding_model.dart';
-import 'package:zetgram_app/src/ui/auth/login_screen.dart';
+import 'package:zetgram_app/src/ui/auth/auth_screen.dart';
 import 'package:zetgram_app/src/utils/app_color/app_color.dart';
 import 'package:zetgram_app/src/utils/utils.dart';
 
