@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zetgram_app/src/utils/app_color/app_color.dart';
@@ -41,6 +42,56 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(
             width: 25 * w,
+          ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          SizedBox(
+            height: 92 * h,
+            child: ListView.builder(
+              itemCount: 7,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Expanded(
+                      child: index == 0
+                          ? Container(
+                            child: DottedBorder(
+                                strokeWidth: 3,
+                                dashPattern: const [8, 5],
+                                borderType: BorderType.RRect,
+                                radius: const Radius.circular(9),
+                                child: Container(
+                                  height: 57 * h,
+                                  width: 57 * h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(9),
+                                  ),
+                                ),
+                                color: AppColor.blue,
+                              ),
+                          )
+                          : Container(
+                              height: 57 * h,
+                              width: 57 * h,
+                              margin: EdgeInsets.only(
+                                right: 25 * w,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                border: Border.all(
+                                  color: AppColor.blue,
+                                  width: 3,
+                                ),
+                              ),
+                            ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
