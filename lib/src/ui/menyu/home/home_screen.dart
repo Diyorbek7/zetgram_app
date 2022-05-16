@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zetgram_app/src/model/story/story_model.dart';
 import 'package:zetgram_app/src/utils/app_color/app_color.dart';
 import 'package:zetgram_app/src/utils/utils.dart';
 
@@ -12,6 +13,37 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<StoryModel> data = [
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+    StoryModel(
+      image: "assets/images/img.png",
+      text: "Luuk",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     double w = Utils.getWidth(context);
@@ -53,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.only(
                 top: 25 * h,
               ),
-              itemCount: 7,
+              itemCount: data.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Column(
@@ -82,6 +114,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           borderRadius:
                                               BorderRadius.circular(9),
                                         ),
+                                        child: Center(
+                                          child: SvgPicture.asset(
+                                            "assets/icons/plus.svg",
+                                            height: 28 * h,
+                                            width: 28 * h,
+                                          ),
+                                        ),
                                       ),
                                       color: AppColor.blue,
                                     ),
@@ -90,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 10 * h,
                                   ),
                                   Text(
-                                    "Add Sto55ry",
+                                    "Add Story",
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 13 * h,
@@ -123,13 +162,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                           width: 3,
                                         ),
                                       ),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(6),
+                                        child: Image.asset(
+                                          data[index].image,
+                                          height: 57 * h,
+                                          width: 57 * h,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                   SizedBox(
                                     height: 10 * h,
                                   ),
                                   Text(
-                                    "Add Story",
+                                    data[index].text,
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 13 * h,
