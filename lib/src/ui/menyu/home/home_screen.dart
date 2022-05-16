@@ -55,24 +55,23 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
+                    SizedBox(height: 25*h,),
                     Expanded(
                       child: index == 0
-                          ? Container(
-                            child: DottedBorder(
-                                strokeWidth: 3,
-                                dashPattern: const [8, 5],
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(9),
-                                child: Container(
-                                  height: 57 * h,
-                                  width: 57 * h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(9),
-                                  ),
+                          ? DottedBorder(
+                              strokeWidth: 3,
+                              dashPattern: const [8, 5],
+                              borderType: BorderType.RRect,
+                              radius: const Radius.circular(9),
+                              child: Container(
+                                height: 57 * h,
+                                width: 57 * h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(9),
                                 ),
-                                color: AppColor.blue,
                               ),
-                          )
+                              color: AppColor.blue,
+                            )
                           : Container(
                               height: 57 * h,
                               width: 57 * h,
@@ -88,6 +87,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                     ),
+                    SizedBox(
+                      height: 10 * h,
+                    ),
+                    Text("5454"),
                   ],
                 );
               },
