@@ -56,38 +56,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Column(
                   children: [
                     Expanded(
-                      child: index == 0
-                          ? DottedBorder(
-                              strokeWidth: 3,
-                              dashPattern: const [8, 5],
-                              borderType: BorderType.RRect,
-                              radius: const Radius.circular(9),
-                              child: Container(
-                                height: 57 * h,
-                                width: 57 * h,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(9),
-                                ),
-                              ),
-                              color: AppColor.blue,
-                            )
-                          : Container(
-                              height: 57 * h,
-                              width: 57 * h,
-                              margin: EdgeInsets.only(
-                                right: 25 * w,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(9),
-                                border: Border.all(
-                                  color: AppColor.blue,
-                                  width: 3,
-                                ),
-                              ),
+                        child: index == 0
+                            ? DottedBorder(
+                          strokeWidth: 3,
+                          dashPattern: const [8, 5],
+                          borderType: BorderType.RRect,
+                          radius: const Radius.circular(9),
+                          child: Container(
+                            height: 57 * h,
+                            width: 57 * h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(9),
                             ),
-                    ),
-                    SizedBox(
-                      height: 10 * h,
+                          ),
+                          color: AppColor.blue,
+                        )
+                            : Container(
+                          height: 57 * h,
+                          width: 57 * h,
+                          margin: EdgeInsets.only(
+                            right: 25 * w,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(9),
+                            border: Border.all(
+                              color: AppColor.blue,
+                              width: 3,
+                            ),
+                          ),
+                        ),
                     ),
                   ],
                 );
