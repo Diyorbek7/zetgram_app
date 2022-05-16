@@ -55,7 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    SizedBox(height: 25*h,),
                     Expanded(
                       child: index == 0
                           ? DottedBorder(
@@ -90,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10 * h,
                     ),
-                    Text("5454"),
                   ],
                 );
               },
