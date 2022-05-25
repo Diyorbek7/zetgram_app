@@ -197,6 +197,11 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+          ListView.builder(
+            itemCount: 3,
+              itemBuilder: (context, index) {
+            return Container();
+          })
         ],
       ),
     );
