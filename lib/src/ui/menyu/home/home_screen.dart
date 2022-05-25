@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zetgram_app/src/model/story/story_model.dart';
@@ -218,6 +220,55 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: AppColor.white,
+            ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 17 * h,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 15 * w,
+                      ),
+                      color: Colors.transparent,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(21),
+                        child: Image.asset(
+                          "assets/images/img.png",
+                          height: 42 * h,
+                          width: 42 * h,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 19 * w,
+                    ),
+                    Expanded(
+                      child: Text(
+                        "Sansa Indira",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16 * h,
+                          fontFamily: AppColor.fontNunitoSans,
+                          height: 25 / 16 * h,
+                          color: AppColor.dark,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      "assets/icons/menu.svg",
+                      height: 24*h,
+                      width: 24*h,
+                    ),
+                    SizedBox(width: 19*w,),
+                  ],
+                ),
+              ],
             ),
           ),
         ],
