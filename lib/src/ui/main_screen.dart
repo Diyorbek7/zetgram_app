@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
     double h = Utils.getHeight(context);
     return Scaffold(
       body: [
-        HomeScreen(),
+        const HomeScreen(),
       ][_selectedIndex],
       floatingActionButton: FloatingActionButton(
 
