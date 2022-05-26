@@ -23,12 +23,7 @@ class _MainScreenState extends State<MainScreen> {
         const HomeScreen(),
       ][_selectedIndex],
       floatingActionButton: FloatingActionButton(
-
-        onPressed: () {
-          // setState(() {
-          //   _selectedIndex = 2;
-          // });
-        },
+        onPressed: () {},
         backgroundColor: AppColor.blue,
         child: SvgPicture.asset(
           "assets/icons/plus.svg",
