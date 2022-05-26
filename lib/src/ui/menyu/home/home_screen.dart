@@ -79,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: ListView(
+        padding: EdgeInsets.only(bottom: 24*h,),
         children: [
           StoryWidget(data: data),
           SizedBox(
