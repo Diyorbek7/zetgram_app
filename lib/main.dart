@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zetgram_app/src/ui/main_screen.dart';
+import 'package:zetgram_app/src/ui/menyu/explore/explore_screen.dart';
 import 'package:zetgram_app/src/ui/menyu/home/home_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.iOS,
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      home: const ExploreScreen(),
     );
   }
 }
